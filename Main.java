@@ -9,6 +9,9 @@ public class Main {
 		
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
+		
+		ComputadorDeBordo cb = new ComputadorDeBordo(6.23, 64, 48);
+		
 
 		//Cheio: 64 ± 4 ohms | Vazio: 363 ± 4 ohms
 		// 6,23omhs =1 litro  0,0063 = 1ml
@@ -40,6 +43,7 @@ public class Main {
 		
 			   
 	   	resultado= kmresultado/cont5;
+//	   	System.out.printf("Seu Consumo foi de = %.2f km/l%n", cb.calcularMedia(ohm1, ohm2, kmin, kmfim));
 	   	System.out.printf("Seu Consumo foi de = %.2f km/l%n", resultado);
 	
 
