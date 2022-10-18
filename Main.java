@@ -12,41 +12,22 @@ public class Main {
 		
 		ComputadorDeBordo cb = new ComputadorDeBordo(6.23, 64, 48);
 		
-
 		//Cheio: 64 ± 4 ohms | Vazio: 363 ± 4 ohms
 		// 6,23omhs =1 litro  0,0063 = 1ml
 		
-		double ohm1,ohm2, cont1,cont2,cont3,cont4,cont5, kmin,kmfim,kmresultado, litros, resultado;
+		double ohm1,ohm2,kmin,kmfim;
 		
 		System.out.printf("Medição em ohms =");
-		
 		ohm1 = sc.nextDouble();
-		cont1 = (ohm1-64) /6.23;
-		cont2 = 48-cont1;
-		
-		System.out.printf("Você tinha = %.2f L%n", cont2 );
-						
 		System.out.printf("Km inicial = ");
 		kmin = sc.nextDouble();
 		System.out.printf("Km Final = ");
 		kmfim = sc.nextDouble();
-		kmresultado = kmfim-kmin;
-		System.out.printf("Você rodou = %.1f km%n", kmresultado );
-	    
 		System.out.printf("Medição em ohms final =");
 		ohm2 = sc.nextDouble();
-		cont3 = (ohm2-64) /6.23;
-		cont4 = 48-cont3;
-		System.out.printf("Você tem = %.2f L%n", cont4 );
-		cont5 = cont2-cont4;
-		System.out.printf("Você gastou = %.2f L%n", cont5 );
-		
-			   
-	   	resultado= kmresultado/cont5;
-//	   	System.out.printf("Seu Consumo foi de = %.2f km/l%n", cb.calcularMedia(ohm1, ohm2, kmin, kmfim));
-	   	System.out.printf("Seu Consumo foi de = %.2f km/l%n", resultado);
+	   	System.out.printf("Computador de Bordo => Seu Consumo foi de = %.2f km/l%n", cb.calcularMedia(ohm1, ohm2, kmin, kmfim));
 	
-
+	   		   	
 		sc.close();
 	}
 }

@@ -5,9 +5,10 @@ public class ComputadorDeBordo {
 		this.setImpedanciaPorLitro(impedanciaPorLitro);
 		this.setImpedanciaTanqueCheio(impedanciaTanqueCheio);
 		this.setVolumeTotalTanque(volumeTotalTanque);
+		
 	}
 	public double calcularMedia(double ohm1, double ohm2, double kmin, double kmfim) {
-
+ 
 		//Cheio: 64 ± 4 ohms | Vazio: 363 ± 4 ohms
 		// 6,23omhs =1 litro  0,0063 = 1ml
 		 
@@ -18,29 +19,31 @@ public class ComputadorDeBordo {
 		kmresultado = kmfim-kmin;
 		
 		System.out.printf("Computador de Bordo => Você tinha = %.2f L%n", cont2 );
-		System.out.printf("Computador de Bordo =>  Você rodou = %.1f km%n", kmresultado );
+		System.out.printf("Computador de Bordo => Você rodou = %.0f km%n", kmresultado );
 		cont3 = (ohm2-impedanciaTanqueCheio) / impedanciaPorLitro;
 		cont4 = volumeTotalTanque-cont3;
-		System.out.printf("Computador de Bordo =>  Você tem = %.2f L%n", cont4 );
+		System.out.printf("Computador de Bordo => Você tem = %.2f L%n", cont4 );
 		cont5 = cont2-cont4;
 		System.out.printf("Computador de Bordo => Você gastou = %.2f L%n", cont5 );
+		return resultado= kmresultado/cont5;
 		
-	   	resultado= kmresultado/cont5;
-	   	return resultado;
+		
+	   
 
 	}
 	
-	private double quilometragemPercorrida() {
+	public double quilometragemPercorrida(double kmin,double kmfim) {
 //	Escrever a lógica e retorno
-		return 0.0;
+		double kmresultado= kmfim-kmin;
+		return kmresultado;
 	}
 	
-	private double volumeOcupadoTanque() {
+	public double volumeOcupadoTanque() {
 //		Escrever a lógica e retorno
 			return 0.0;
 		}
 	
-	private double volumeDisponívelTanque() {
+	public double volumeDisponívelTanque() {
 //		Escrever a lógica e retorno
 			return 0.0;
 		}
